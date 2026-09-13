@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-cream text-charcoal font-body antialiased;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+::selection {
+  background-color: #B9924F;
+  color: #1A1310;
+}
+
+/* Visible focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #B9924F;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Subtle grain texture overlay, applied via .grain utility */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar, restrained */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EEE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #B9924F;
+  border-radius: 999px;
+}
+
+.container-narrow {
+  @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+}
+
+.eyebrow {
+  @apply text-xs tracking-widest2 uppercase text-gold font-semibold;
+}
+
+.section-heading {
+  @apply font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-charcoal;
+}
