@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 export default function Menu() {
   const [activeId, setActiveId] = useState(menuCategories[0].id);
   const active = menuCategories.find((c) => c.id === activeId);
-<h2>IRANI TEST UPDATE 123</h2>
+
   return (
     <section id="menu" className="bg-cream-soft py-24 md:py-28">
       <div className="container-narrow">
