@@ -60,9 +60,7 @@ export default function Features() {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="rounded-2xl border border-cream/10 bg-coffee/60 p-8 shadow-card"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 text-gold">
-                <Icon size={20} strokeWidth={1.5} />
-              </div>
+  
               <h3 className="font-display text-2xl text-cream mb-2">{title}</h3>
               <p className="text-sm leading-relaxed text-cream/65">{text}</p>
             </motion.div>

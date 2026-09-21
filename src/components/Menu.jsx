@@ -24,11 +24,11 @@ export default function Menu() {
             <button
               key={cat.id}
               onClick={() => setActiveId(cat.id)}
-              className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-300 ${
-                activeId === cat.id
-                  ? "bg-burgundy text-cream"
-                  : "bg-cream text-charcoal/70 hover:text-burgundy border border-charcoal/10"
-              }`}
+            className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
+  activeId === cat.id
+    ? "bg-black text-white border border-black"
+    : "bg-cream text-charcoal/70 border border-charcoal/10 hover:-translate-y-0.5 hover:shadow-sm"
+}`}
             >
               {cat.label}
             </button>

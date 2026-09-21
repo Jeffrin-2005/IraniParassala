@@ -9,73 +9,129 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+body {
+  @apply bg-neutral-50 text-neutral-900 antialiased;
+  font-feature-settings: "liga" 1, "kern" 1;
+  margin: 0;
 }
 
-body {
-  @apply bg-cream text-charcoal font-body antialiased;
-  font-feature-settings: "liga" 1, "kern" 1;
+* {
+  box-sizing: border-box;
 }
 
 ::selection {
-  background-color: #B9924F;
-  color: #1A1310;
+  background: #171717;
+  color: #ffffff;
 }
 
-/* Visible focus states for accessibility */
+/* Clean scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #737373;
+  border-radius: 10px;
+}
+
+/* Accessibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #B9924F;
+  outline: 2px solid #171717;
   outline-offset: 3px;
-  border-radius: 2px;
 }
 
-/* Subtle grain texture overlay, applied via .grain utility */
-.grain {
-  position: relative;
-}
-.grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Custom scrollbar, restrained */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #F5EEE1;
-}
-::-webkit-scrollbar-thumb {
-  background: #B9924F;
-  border-radius: 999px;
-}
-
+/* Main container */
 .container-narrow {
-  @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
 }
 
+/* Small section label */
 .eyebrow {
-  @apply text-xs tracking-widest2 uppercase text-gold font-semibold;
+  @apply text-[11px] tracking-[0.25em] uppercase text-neutral-500 font-medium;
 }
 
+/* Main headings */
 .section-heading {
-  @apply font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-charcoal;
+  @apply font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.02em] text-neutral-950;
+}
+
+/* Minimal card */
+.minimal-card {
+  @apply bg-white border border-neutral-200 rounded-2xl;
+}
+
+/* Minimal button */
+.minimal-button {
+  @apply inline-flex items-center justify-center rounded-full
+    border border-neutral-900
+    px-6 py-3
+    text-sm font-medium
+    transition-all duration-300
+    hover:bg-neutral-900 hover:text-white;
+}
+
+/* Secondary button */
+.minimal-button-light {
+  @apply inline-flex items-center justify-center rounded-full
+    border border-neutral-300
+    bg-white
+    px-6 py-3
+    text-sm font-medium
+    text-neutral-900
+    transition-all duration-300
+    hover:border-neutral-900;
+}
+
+/* Image treatment */
+.restaurant-image {
+  @apply overflow-hidden rounded-2xl;
+}
+
+.restaurant-image img {
+  @apply w-full h-full object-cover transition-transform duration-700;
+}
+
+.restaurant-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Very subtle section divider */
+.section-divider {
+  @apply border-t border-neutral-200;
+}
+
+/* Clean inputs */
+.minimal-input {
+  @apply w-full rounded-xl border border-neutral-300
+    bg-white px-4 py-3
+    text-sm text-neutral-900
+    outline-none
+    transition-all duration-200
+    placeholder:text-neutral-400
+    focus:border-neutral-900
+    focus:ring-1 focus:ring-neutral-900;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
