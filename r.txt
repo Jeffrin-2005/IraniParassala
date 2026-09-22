@@ -3,3 +3,7 @@ npm run dev
 USE THIS BASH TO RUN THE BACKEND:
 node server/server.js
 http://localhost:5173/
+git status
+git add .
+git commit -m "Update restaurant website"
+git push origin main
