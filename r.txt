@@ -1,4 +1,5 @@
-USE THIS BASH TO RUN THE CODE
+USE THIS BASH TO RUN THE FRONDEND:
 npm run dev
+USE THIS BASH TO RUN THE BACKEND:
+node server/server.js
 http://localhost:5173/
-hello

@@ -37,7 +37,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="#reservation"
+                href="/Reserve"
                 className="minimal-button-light"
               >
                 Reserve a Table
