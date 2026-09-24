@@ -9,10 +9,10 @@ export const menuCategories = [
     id: "breakfast",
     label: "Breakfast",
     items: [
-      { name: "Dish Name", description: "Short description of the dish goes here.", price: "₹ --" },
-      { name: "Dish Name", description: "Short description of the dish goes here.", price: "₹ --" },
-      { name: "Dish Name", description: "Short description of the dish goes here.", price: "₹ --" },
-      { name: "Dish Name", description: "Short description of the dish goes here.", price: "₹ --" },
+      { name: "dosa", description: "Short description of the dish goes here.", price: "₹ " },
+      { name: "idily", description: "Short description of the dish goes here.", price: "₹ --" },
+      { name: "parotta", description: "Short description of the dish goes here.", price: "₹ --" },
+      { name: "naan", description: "Short description of the dish goes here.", price: "₹ --" },
     ],
   },
   {
