@@ -48,7 +48,7 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div className="restaurant-image h-[500px] lg:h-[650px]">
+          <div className="restaurant-image h-[600px] lg:h-[500px]">
 
             <img
               src="/src/assets/hero.png"
